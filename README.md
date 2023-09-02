@@ -34,6 +34,11 @@ For Windows :
 ```bash 
   .\grafana-server.exe
 ```
+- You should access to http://localhost:3000
+- Default user and password : `admin`
+- You should go Plugins page and add Prometheus as a data source.
+- Final Step ; Import DashBoard and type in ID field as `7589` and load it.
+- You also need to run your kafka to see metrics in Grafana !
 
 #### Prometheus Part
 
@@ -57,5 +62,16 @@ For Windows :
 ```bash 
   .\kafka_exporter.exe --kafka.server=localhost:9092
 ```    
+
+#### DB PART
+
+Docker :
+```bash 
+  docker compose up -d 
+```    
+
+#### DB PART
+
+Kafka Metrics DashBoard (7589)
 
 ![img.png](img.png)
