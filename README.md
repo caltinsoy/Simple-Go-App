@@ -15,6 +15,8 @@ POST : /book
 - https://pkg.go.dev/github.com/segmentio/kafka-go (Kafka-Driver)
 - https://github.com/githubnemo/CompileDaemon (Hot Reload and more ...)
 
+- Type `CompileDaemon -command="./go-crud.exe"` to run Go App !
+
 
 #### Monitoring Part :
 
