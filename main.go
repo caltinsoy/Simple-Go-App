@@ -23,9 +23,11 @@ func main() {
 	defer cancel()
 
 	r.GET("/health", controller.HealthCheck)
-	r.POST("/book", func(context *gin.Context) {
+	r.GET("/log/:id", controller.GetLog)
+	r.POST("/log", func(context *gin.Context) {
 		controller.CreateLog(context, ctx)
 	})
+	r.DELETE("/log/:id", controller.DeleteLog)
 
 	// Start the HTTP server in a goroutine
 	go func() {

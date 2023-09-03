@@ -23,6 +23,39 @@ func CreateLog(c *gin.Context, ctx context.Context) {
 	c.JSON(http.StatusOK, gin.H{"data": logDocument})
 }
 
+func GetLog(c *gin.Context) {
+
+	id := c.Param("id")
+
+	// Query the database to find the user with the specified ID
+	var logDocument model.LogDocument
+	if err := initializers.DB.Where("id = ?", id).First(&logDocument).Error; err != nil {
+		c.JSON(404, gin.H{"error": "LogDocument not found"})
+		return
+	}
+
+	// Return the user as JSON response
+	c.JSON(200, logDocument)
+
+}
+
+func DeleteLog(c *gin.Context) {
+
+	id := c.Param("id")
+
+	// Query the database to find the user with the specified ID
+	var logDocument model.LogDocument
+	// Delete the user with the specified ID from the database
+	if err := initializers.DB.Where("id = ?", id).Delete(&model.LogDocument{}).Error; err != nil {
+		c.JSON(404, gin.H{"error": "LogDocument not found"})
+		return
+	}
+
+	// Return the user as JSON response
+	c.JSON(200, logDocument)
+
+}
+
 func HealthCheck(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "pong"})
 }
