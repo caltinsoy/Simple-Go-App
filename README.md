@@ -72,7 +72,7 @@ Docker :
   docker compose up -d 
 ```    
 
-#### DB PART
+#### DASHBOARD PART
 
 Kafka Metrics DashBoard (7589)
 
