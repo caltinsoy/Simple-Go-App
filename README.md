@@ -5,7 +5,8 @@ Simple Go App to monitor Kafka metrics in Grafana !
 App contains 2 basic endpoints ;
 
 GET : /health
-POST : /book
+GET : /log/:id
+POST : /log
 
 #### GO Part :
 
